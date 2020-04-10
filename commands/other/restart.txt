@@ -1,0 +1,53 @@
+{
+  "name": "restart",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "Ymobl",
+  "actions": [
+    {
+      "info": "26",
+      "storage": "1",
+      "varName2": "seconds",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "25",
+      "storage": "1",
+      "varName2": "minutes",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "24",
+      "storage": "1",
+      "varName2": "hours",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "23",
+      "storage": "1",
+      "varName2": "days",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "info": "2",
+      "storage": "1",
+      "varName2": "ping",
+      "name": "Store Bot Client Info"
+    },
+    {
+      "code": "console.log('\\x1b[31m' ,`> Bot restarted after ${tempVars(\"days\")} days, ${tempVars(\"hours\")} hours, ${tempVars(\"minutes\")} minutes, ${tempVars(\"seconds\")} seconds. [PING AT RESTART = ${tempVars(\"ping\")}ms]`);\nconsole.log('\\x1b[0m');",
+      "behavior": "0",
+      "interpretation": "0",
+      "storage": "0",
+      "varName": "",
+      "VTypeSelect": "0",
+      "CVTypeValue": "",
+      "name": "Run Script"
+    },
+    {
+      "filename": "bot.js",
+      "name": "Restart Bot"
+    }
+  ],
+  "comType": "0"
+}
