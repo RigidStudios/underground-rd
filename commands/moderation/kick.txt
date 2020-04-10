@@ -1,0 +1,206 @@
+{
+  "name": "kick",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "ZOilq",
+  "actions": [
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "comment": "Check if Mod Role Exists/Member Has",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "ModRole",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "Mod.Role.ID",
+      "name": "Store Server Data"
+    },
+    {
+      "info": "0",
+      "find": "${tempVars(\"Mod.Role.ID\")}",
+      "storage": "1",
+      "varName": "Mod.Role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "Mod.Role.ID",
+      "comparison": "1",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You haven't defined a Moderation Role for your server, please prompt the server owner to use `!serverconfig`.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Check if Bot has custom kick messages",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "filename": "./resources/config.json",
+      "storage": "1",
+      "varName2": "config.file",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "config.file",
+      "path": "$.config-allowances.change-kick-messages",
+      "storage": "1",
+      "varName": "custom.message.enable",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "storage": "1",
+      "varName": "custom.message.enable",
+      "comparison": "1",
+      "value": "\"true\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "4",
+      "iffalseVal": "NoCustom",
+      "name": "Check Variable"
+    },
+    {
+      "comment": "Check if Server has custom kick messages",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CustomKick",
+      "comparison": "1",
+      "value": "\"true\"",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "description": "<b>Server Doesn't have any Custom Kick Messages.",
+      "jump_to_anchor": "NoCustom",
+      "color": "#000000",
+      "name": "Jump to Anchor"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CustomKick",
+      "defaultVal": "\"false\"",
+      "storage": "1",
+      "varName2": "kick.custommessage",
+      "name": "Store Server Data"
+    },
+    {
+      "text": "${tempVars(\"kick.custommessage\")}",
+      "text2": "{member}",
+      "text3": "${mentionedUser}",
+      "info": "0",
+      "storage": "1",
+      "varName": "kick.custommessage.replaced",
+      "name": "Replace Text"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${tempVars(\"kick.custommessage.replaced\")}",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "NoCustom",
+      "color": "#000000",
+      "description": "<b>Server/Bot doesn't have any Custom Kick Messages.",
+      "name": "Create Anchor"
+    },
+    {
+      "title": "KICK",
+      "author": "",
+      "color": "",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "1",
+      "varName3": "kick.sent",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "15",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "kick.sent",
+      "name": "Delete Message"
+    }
+  ],
+  "comType": "0"
+}
