@@ -1,1 +1,128 @@
-
+{
+  "name": "Message Logging",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "GFOZb",
+  "actions": [
+    {
+      "filename": "./resources/config.json",
+      "storage": "1",
+      "varName2": "File.Config",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "File.Config",
+      "path": "$.credits",
+      "storage": "1",
+      "varName": "credits.Text",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "File.Config",
+      "path": "$.privacy-settings.privacy-disclosure",
+      "storage": "1",
+      "varName": "config.Privacy",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "File.Config",
+      "path": "$.privacy-settings.wanted-cmd-logging.message-logs",
+      "storage": "1",
+      "varName": "config.Logs",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "storage": "1",
+      "varName": "config.Logs",
+      "comparison": "1",
+      "value": "\"true\"",
+      "iftrue": "0",
+      "iftrueVal": "StartLog",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "credits.Text",
+      "comparison": "1",
+      "value": "\"RigidStudios -- You're welcome for all this. =D\"",
+      "iftrue": "4",
+      "iftrueVal": "StartLog",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "tosend": "Woopsie! You can't change the Credits! The original creator is RigidStudios (224920540903636994)",
+      "name": "Send Message to Console (Logs)"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "StartLog",
+      "color": "#000000",
+      "description": "",
+      "name": "Create Anchor"
+    },
+    {
+      "storage": "1",
+      "varName": "config.Privacy",
+      "comparison": "1",
+      "value": "\"true\"",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "tosend": "Woopsie! You don't have privacy disclosure enabled. We can't show you this message until you enable it in your './resources/config.json'.",
+      "name": "Send Message to Console (Logs)"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "msg.Text",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "msg.Time",
+      "name": "Store Message Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "18",
+      "storage": "1",
+      "varName2": "msg.Tag",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "msg.Channel.Name",
+      "name": "Store Channel Info"
+    },
+    {
+      "tosend": "[${tempVars(\"msg.Time\")}] ${tempVars(\"msg.Tag\")} (#${tempVars(\"msg.Channel.Name\")}) >>> ${tempVars(\"msg.Text\")}",
+      "name": "Send Message to Console (Logs)"
+    }
+  ],
+  "comType": "3"
+}
