@@ -1,0 +1,53 @@
+{
+  "credits":"RigidStudios -- You're welcome for all this. =D",
+  "-nextcomment":"It will take a while for all commands to support this next argument",
+  "embed-all":"true",
+  "privacy-settings":{
+    "-comment":"Privacy Disclosure will inform new Server Owners of all logs that the bot keeps, if Privacy Disclosure is set to false, the bot will not keep ANY logs that include message content, server id or user id.",
+    "privacy-disclosure":"true",
+    "wanted-cmd-logging":{
+      "message-logs":"true",
+      "dm-message-logs":"true",
+      "voice-channel-logs":"false",
+      "bot-join-logs":"true",
+      "member-join-logs":"false",
+      "-comment":"Server Update Logs can become extensive, and annoying, it is recommended to keep this off.",
+      "server-update-logs":"false"
+    }
+  },
+  "default-language":"EN",
+  "available-language":{
+    "-comment":"REPLACE EN/FR/etc. with 'false' to disable the language (IF THE DEFAULT LANGUAGE IS SET TO 'false', IT WILL DEFAULT TO ENGLISH.)",
+    "English":"EN",
+    "French":"FR",
+    "Spanish":"ES",
+    "German":"DE"
+  },
+  "config-allowances":{
+    "-comment":"Set what you don't want Server Owners to be able to do in [prefix]serverconfig.",
+    "change-language":"true",
+    "change-kick-message":"true",
+    "change-ban-message":"true",
+    "change-warn-message":"false",
+    "change-mute-message":"true",
+    "change-tempmute-message":"true",
+    "change-tempban-message":"true",
+    "warning-ladder":"true",
+    "allow-tickets":{
+      "-comment":"Ticket System is a toggleable module, however it is bot-side and only parts with '-' in front are Server Owner modifiable if set to true.",
+      "enabled":"true",
+      "keep-all-logs":"false",
+      "allow-ticket-reason":"true",
+      "-nextcomment":"Extremely unstable module if true, be ready to troubleshoot it yourself.",
+      "-allow-all-moderator-role-read-perms":"false"
+    },
+    "allow-moderator":{
+      "-comment":"This decides whether moderators should be able to issue their own punishments, disregarding the warning ladder. Requires 'warning-ladder' to be true",
+      "ban":"false",
+      "tempban":"true",
+      "mute":"true",
+      "tempmute":"true",
+      "kick":"true"
+    }
+  }
+}
