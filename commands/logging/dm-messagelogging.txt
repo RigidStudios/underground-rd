@@ -1,0 +1,116 @@
+{
+  "name": "Message Logging DMs",
+  "permissions": "NONE",
+  "restriction": "3",
+  "_id": "jyqoT",
+  "actions": [
+    {
+      "filename": "./resources/config.json",
+      "storage": "1",
+      "varName2": "File.Config",
+      "name": "Read File"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "File.Config",
+      "path": "$.credits",
+      "storage": "1",
+      "varName": "credits.Text",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "File.Config",
+      "path": "$.privacy-settings.privacy-disclosure",
+      "storage": "1",
+      "varName": "config.Privacy",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "behavior": "0",
+      "jsonObjectVarName": "File.Config",
+      "path": "$.privacy-settings.wanted-cmd-logging.dm-message-logs",
+      "storage": "1",
+      "varName": "config.Logs",
+      "name": "Parse From Stored Json"
+    },
+    {
+      "storage": "1",
+      "varName": "config.Logs",
+      "comparison": "1",
+      "value": "\"true\"",
+      "iftrue": "0",
+      "iftrueVal": "StartLog",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "credits.Text",
+      "comparison": "1",
+      "value": "\"RigidStudios -- You're welcome for all this. =D\"",
+      "iftrue": "4",
+      "iftrueVal": "StartLog",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "tosend": "Woopsie! You can't change the Credits! The original creator is RigidStudios (224920540903636994)",
+      "name": "Send Message to Console (Logs)"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "StartLog",
+      "color": "#000000",
+      "description": "",
+      "name": "Create Anchor"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "msg.Text",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "5",
+      "storage": "1",
+      "varName2": "msg.Time",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "msg.Auth",
+      "name": "Store Message Info"
+    },
+    {
+      "member": "2",
+      "varName": "msg.Auth",
+      "info": "2",
+      "storage": "1",
+      "varName2": "msg.Tag",
+      "name": "Store Member Info"
+    },
+    {
+      "code": "const chalk = require('chalk');\n/* \n   CALCULATES UNIX TIME INTO H:M:S FORMAT \n   Will look into different formats in future iterations.\n*/\nvar unixtime = tempVars(\"msg.Time\") / 1000;\n\nvar date = new Date(unixtime * 1000);\n\nvar hours = date.getHours();\nvar minutes = \"0\" + date.getMinutes();\nvar seconds = \"0\" + date.getSeconds();\n\nvar author = msg.author.tag\n\nvar formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);\nvar desiredLog = '[' + formattedTime + '] ' + author + ` >>>` ;\nconsole.log(chalk.gray(desiredLog), chalk.white(` ${tempVars(\"msg.Text\")}`));",
+      "behavior": "0",
+      "interpretation": "0",
+      "storage": "0",
+      "varName": "",
+      "VTypeSelect": "0",
+      "CVTypeValue": "",
+      "name": "Run Script"
+    }
+  ],
+  "comType": "3"
+}
