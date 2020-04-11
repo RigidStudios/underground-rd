@@ -120,8 +120,14 @@
       "name": "Store Channel Info"
     },
     {
-      "tosend": "[${tempVars(\"msg.Time\")}] ${tempVars(\"msg.Tag\")} (#${tempVars(\"msg.Channel.Name\")}) >>> ${tempVars(\"msg.Text\")}",
-      "name": "Send Message to Console (Logs)"
+      "code": "const chalk = require('chalk');\n/* \n   CALCULATES UNIX TIME INTO H:M:S FORMAT \n   Will look into different formats in future iterations.\n*/\nvar unixtime = tempVars(\"msg.Time\") / 1000;\n\nvar date = new Date(unixtime * 1000);\n\nvar hours = date.getHours();\nvar minutes = \"0\" + date.getMinutes();\nvar seconds = \"0\" + date.getSeconds();\n\nvar author = msg.author.tag\n\nvar formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);\nvar desiredLog = '[' + formattedTime + '] ' + author + ` (#${tempVars(\"msg.Channel.Name\")}) >>>` ;\nconsole.log(chalk.gray(desiredLog), chalk.white(` ${tempVars(\"msg.Text\")}`));",
+      "behavior": "0",
+      "interpretation": "0",
+      "storage": "0",
+      "varName": "",
+      "VTypeSelect": "0",
+      "CVTypeValue": "",
+      "name": "Run Script"
     }
   ],
   "comType": "3"
