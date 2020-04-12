@@ -120,7 +120,7 @@
       "name": "Store Channel Info"
     },
     {
-      "code": "const chalk = require('chalk');\n/* \n   CALCULATES UNIX TIME INTO H:M:S FORMAT \n   Will look into different formats in future iterations.\n*/\nvar unixtime = tempVars(\"msg.Time\") / 1000;\n\nvar date = new Date(unixtime * 1000);\n\nvar hours = date.getHours();\nvar minutes = \"0\" + date.getMinutes();\nvar seconds = \"0\" + date.getSeconds();\n\nvar author = msg.author.tag;\nlet name = msg.guild.name;\n\nvar formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);\nvar desiredLog = '[' + formattedTime + '] ' + author + ` (` + name + ` | #${tempVars(\"msg.Channel.Name\")}) >>>` ;\nconsole.log(chalk.gray(desiredLog), chalk.white(` ${tempVars(\"msg.Text\")}`));",
+      "code": "const chalk = require('chalk');\n/* \n   CALCULATES UNIX TIME INTO H:M:S FORMAT \n   Will look into different formats in future iterations.\n*/\nvar unixtime = tempVars(\"msg.Time\") / 1000;\n\nvar date = new Date(unixtime * 1000);\n\nvar hours = date.getHours();\nvar minutes = \"0\" + date.getMinutes();\nvar seconds = \"0\" + date.getSeconds();\n\nvar author = msg.author.tag;\nlet name = msg.guild.name;\n\nvar formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);\nvar desiredLog = '[' + formattedTime + '] ';\nvar desiredLog2 = ' (' + name + ` | #${tempVars(\"msg.Channel.Name\")}) >>>`;\nconsole.log(chalk.gray(desiredLog), chalk.gray.underline(author), chalk.gray(desiredLog2), chalk.white(`${tempVars(\"msg.Text\")}`));\nif (msg.attachments.size > 0) {\n    var attachedFile = (msg.attachments).array();\n    console.log(chalk.gray(attachedFile[0].url));\n}",
       "behavior": "0",
       "interpretation": "0",
       "storage": "0",
