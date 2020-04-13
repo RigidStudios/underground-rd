@@ -1,0 +1,44 @@
+{
+  "language-name":"english",
+    "commands":{
+      "kick":{
+          "Text0":"Kick!",
+          "Text1":" has been kicked!"
+      },
+      "ban":{
+        "Text0":"Ban!",
+        "Text1":"The ban hammer has spoken, ",
+        "Text2":" has been banned!"
+      },
+      "tempban":{
+        "Text0":"",
+        "Text1":"",
+        "Text2":"",
+        "Text3":"",
+        "Text4":"",
+        "Text5":""
+      },
+      "mute":{
+
+      },
+      "tempmute":{
+
+      },
+      "warn":{
+
+      },
+      "config":{
+        "Text0":"Hey! **You're not the owner of the server**, ",
+        "Text1":" is!",
+        "Text2":"Server Config",
+        "Text3":"To view more commands in a category, do `;config <category>`",
+        "Text4":"You need Premium to modify this config!",
+        "Text5":"You didn't specifiy a language! Current language is:",
+        "Text6":"To change language, do `;config language <en|fr|se|ru|etc.>`.",
+        "Text7":"We weren't able to find that language... If you'd like to contribute to translation, you can do so at",
+        "Text8":"",
+        "Text9":"",
+        "Text10":""
+      }
+    }
+}
