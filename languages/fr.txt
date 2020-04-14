@@ -1,0 +1,61 @@
+{
+  "language-name":"Français",
+  "language-link":"https://github.com/RigidStudios/underground-rd/blob/master/languages/fr.txt",
+    "commands":{
+      "kick":{
+          "Text0":"Kick!",
+          "Text1":" a ete enlevé du serveur!"
+      },
+      "ban":{
+        "Text0":"Ban!",
+        "Text1":"Le marteau de ban a fonctionné, ",
+        "Text2":" a été ban!"
+      },
+      "tempban":{
+        "Text0":"",
+        "Text1":"",
+        "Text2":"",
+        "Text3":"",
+        "Text4":"",
+        "Text5":""
+      },
+      "mute":{
+
+      },
+      "tempmute":{
+
+      },
+      "warn":{
+
+      },
+      "config":{
+        "Text0":"Hey! **Vous n'êtes pas le propriétaire du serveur**, ",
+        "Text1":" l'est!",
+        "Text2":"Configuration du Serveur",
+        "Text3":"Pour voir plus de commandes, fais `;config <catégorie>`",
+        "Text4":"Vous avez besoin de premium pour modifier cette catégorie!",
+        "Text5":"Vous n'avez pas specifié de langue! La langue utilisé par le bot couramment est:",
+        "Text6":"Pour changer de langue, faites `;config language <en|fr|se|ru|etc.>` ou réagissez avec une des langues si-dessous.\n *Pour voir toutes les langues disponibles, verifiez la branche maître sur notre [GitHub](https://github.com/RigidStudios/underground-rd).*",
+        "Text7":"Nous n'étions pas capables de trouver cette langue... **Si vous voulez contribuer un language vous pouvez le faire à**",
+        "Text8":"Otherwise, if you think this is wrong, please report it to the developers on the support discord.",
+        "Text9":"Le langage a été modifié! **Si vous voulez contribuer un language vous pouvez le faire à**",
+        "Text10":"Les commandes ne changent pas, si vous pensez avoir fait une erreur et voulez retourner au français, faites `;config language fr`.",
+        "Text11":"Pas toutes les langues disponibles seront montrées en emoji.",
+        "Text12":"La langue utilisé par le bot couramment est:",
+        "Text13":"",
+        "Text14":"",
+        "Text15":"",
+        "Text16":"",
+        "config-menu":{
+          "Text0":"Langue",
+          "Text1":"Langue courante: ",
+          "Text2":"Rôles de modération",
+          "Text3":"Faire `;config mod` pour voir plus.",
+          "Text4":"Canal de commandes",
+          "Text5":"Canal(s) actuel(s) de Commandes:",
+          "Text6":"Vous n'avez pas choisi de canal de commandes, elle peuvent etre utilisées dans toutes les chambres.",
+          "Text7":"Contourné par perssones avec des rôles d'Administrateur (Nécessite Premium)"
+        }
+      }
+    }
+}
