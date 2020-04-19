@@ -42,7 +42,7 @@
         "Text5":"We've created the item, here is your updated To-Do list.",
         "Text6":"**React** with",
         "Text7":"to edit your list (add/delete).",
-        "Text8":"You are removing an item, please enter **exactly** your desired removal text. (Multi-line not supported)",
+        "Text8":"You are removing an item, please enter **exactly** your desired removal text, without the `,`. (Multi-line not supported)",
         "Text9":"",
         "Text10":"",
         "Text11":"",
