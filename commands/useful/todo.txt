@@ -47,7 +47,7 @@
       "server": "0",
       "varName": "",
       "dataName": "Language",
-      "defaultVal": "0",
+      "defaultVal": "\"en\"",
       "storage": "1",
       "varName2": "lang",
       "name": "Store Server Data"
@@ -192,6 +192,42 @@
     },
     {
       "storage": "1",
+      "varName": "embed.Main",
+      "Edit0": "0",
+      "Edit1": "0",
+      "Edit2": "0",
+      "Edit3": "0",
+      "Edit4": "0",
+      "Edit5": "0",
+      "Edit6": "0",
+      "Edit7": "0",
+      "Edit8": "0",
+      "Edit9": "1",
+      "Edit10": "0",
+      "Edit11": "0",
+      "Edit12": "0",
+      "title": "",
+      "url": "",
+      "description": "",
+      "color": "",
+      "imageUrl": "",
+      "imageUrl2": "",
+      "thumbUrl": "",
+      "thumbUrl2": "",
+      "author": "",
+      "authorUrl": "",
+      "authorIcon": "",
+      "footer": "By RigidStudios#6315",
+      "footerIcon": "",
+      "timestamp": "",
+      "fieldNum": "",
+      "fieldName": "",
+      "fieldDescription": "",
+      "fieldInline": "0",
+      "name": "Edit Embed Object MOD"
+    },
+    {
+      "storage": "1",
       "stringifyOutput": "1",
       "varName": "json.SQL1",
       "hostname": "localhost",
@@ -305,7 +341,7 @@
       "authorUrl": "",
       "imageUrl": "",
       "thumbUrl": "",
-      "timestamp": "false",
+      "timestamp": "custom",
       "debug": "false",
       "text": "",
       "year": "",
@@ -361,7 +397,7 @@
       "varName": "embed.Message",
       "filter": "user.id === `${msg.author.id}`",
       "max": "1",
-      "time": "60000",
+      "time": "180000",
       "maxEmojis": "",
       "maxUsers": "",
       "iftrue": "3",
@@ -481,7 +517,7 @@
       "varName": "",
       "filter": "content.length > 0 && author.id === user.id",
       "max": "1",
-      "time": "60000",
+      "time": "180000",
       "iftrue": "3",
       "iftrueVal": "1",
       "iffalse": "0",
@@ -612,7 +648,7 @@
       "varName": "",
       "filter": "content.length > 0 && author.id === user.id",
       "max": "1",
-      "time": "60000",
+      "time": "180000",
       "iftrue": "3",
       "iftrueVal": "1",
       "iffalse": "0",
@@ -716,5 +752,11 @@
       "name": "Clear reactions from message"
     }
   ],
-  "comType": "0"
+  "comType": "0",
+  "customData": {
+    "Test Extension": {
+      "input1": 0,
+      "input2": 0
+    }
+  }
 }
